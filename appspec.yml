@@ -13,18 +13,18 @@ permissions:
       - file
 hooks:
   ApplicationStop:
-    - location: /home/ec2-user/getpull.sh
+    - location: /scripts/getpull.sh
       timeout: 30
       runas: root
   BeforeInstall:
-    - location: /home/ec2-user/getpull.sh
+    - location: /scripts/getpull.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /home/ec2-user/getpull.sh
+    - location: /scripts/getpull.sh
       timeout: 300
       runas: www-data
   ApplicationStart:
-    - location: /home/ec2-user/getpull.sh
+    - location: /scripts/getpull.sh
       timeout: 30
       runas: root
