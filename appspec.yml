@@ -6,8 +6,8 @@ files:
 permissions:
   - object: /
     pattern: "**"
-    owner: www-data
-    group: www-data
+    owner: root
+    group: root
     type:
       - directory
       - file
@@ -23,7 +23,7 @@ hooks:
   AfterInstall:
     - location: /scripts/getpull.sh
       timeout: 300
-      runas: www-data
+      runas: root
   ApplicationStart:
     - location: /scripts/getpull.sh
       timeout: 30
